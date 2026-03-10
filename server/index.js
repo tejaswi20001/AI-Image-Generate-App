@@ -9,6 +9,8 @@ dotenv.config();
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
@@ -47,7 +49,7 @@ const connectDB = async () => {
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(8000, () => console.log("server started on port 8000"));
+    app.listen(PORT, () => console.log("server started on port 8000"));
   } catch (error) {
     console.log(error);
   }
