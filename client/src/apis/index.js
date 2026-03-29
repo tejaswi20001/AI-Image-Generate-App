@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://44.211.91.178:8000/api",
+  baseURL: "http://98.92.164.130:8000/api",
 });
 
 export const GetPosts = async () => await API.get("/post");
